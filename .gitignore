@@ -1,4 +1,7 @@
 /node_modules
+/public/frontend/css
+/public/frontend/js
+/public/frontend/mix-manifest.json
 /public/hot
 /public/storage
 /storage/*.key

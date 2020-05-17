@@ -3,11 +3,13 @@ const glob = require('glob-all');
 require('laravel-mix-purgecss');
 const tailwindcss = require('tailwindcss');
 
-mix.js('resources/js/frontend/app.js', 'public/js')
-    .sass('resources/sass/frontend/app.scss', 'public/css')
+mix.setPublicPath(path.normalize('public/frontend'))
+    .js('resources/js/frontend/app.js', 'public/frontend/js')
+    .sass('resources/sass/frontend/app.scss', 'public/frontend/css')
     .webpackConfig({
         output: {
             chunkFilename: 'js/[name].js?id=[chunkhash]',
+            publicPath: '/frontend/'
         },
         module: {
             rules: [
