@@ -27,7 +27,10 @@ mix.setPublicPath(path.normalize('public/frontend'))
             ]
         },
         resolve: {
-            extensions: ["*", ".js", ".jsx", ".vue", ".ts", ".tsx"]
+            extensions: ["*", ".js", ".jsx", ".vue", ".ts", ".tsx"],
+            alias: {
+                '@front': path.resolve(__dirname, 'resources/js/frontend'),
+            }
         }
     })
     .options({

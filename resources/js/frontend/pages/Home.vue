@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import DefaultLayout from "../layouts/default/DefaultLayout";
-import useCounter from "../services/counter";
+import DefaultLayout from "@front/layouts/default/DefaultLayout"
+import useCounter from "@front/services/counter"
 
 export default {
     name: "Home",
