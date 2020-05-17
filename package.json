@@ -13,6 +13,7 @@
         "axios": "^0.19",
         "cross-env": "^7.0",
         "laravel-mix": "^5.0.1",
+        "laravel-mix-purgecss": "^5.0.0",
         "resolve-url-loader": "^2.3.1",
         "sass": "^1.20.1",
         "sass-loader": "^8.0.0",
@@ -23,6 +24,8 @@
         "@inertiajs/inertia": "^0.1.9",
         "@inertiajs/inertia-vue": "^0.1.4",
         "@vue/composition-api": "^0.5.0",
+        "glob-all": "^3.2.1",
+        "tailwindcss": "^1.4.6",
         "ts-loader": "^7.0.4",
         "typescript": "^3.9.2"
     }

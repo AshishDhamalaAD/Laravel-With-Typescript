@@ -1,7 +1,12 @@
 <template>
     <nav>
-        <inertia-link :href="$route('home')">Home</inertia-link>
-        <inertia-link :href="$route('blogs.index')">Blogs</inertia-link>
+        <inertia-link v-for="(navItem, index) in navItems"
+                      :key="index"
+                      :href="$route(navItem.route)"
+                      class="px-4 py-2 rounded"
+                      :class="{'bg-primary text-white': (`frontend.${navItem.route}` === $page.routeName)}">
+            {{ navItem.label }}
+        </inertia-link>
     </nav>
 </template>
 
@@ -11,14 +16,21 @@ export default {
 
     props: {},
 
-    data: () => ({}),
+    setup() {
+        const navItems = [
+            {
+                label: "Home",
+                route: "home"
+            },
+            {
+                label: "Blogs",
+                route: "blogs.index"
+            }
+        ];
 
-    computed: {},
-
-    methods: {},
-
-    watch: {},
-
-    mounted() {}
+        return {
+            navItems
+        };
+    }
 };
 </script>
