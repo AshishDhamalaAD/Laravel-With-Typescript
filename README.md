@@ -1,4 +1,4 @@
-This project is setup with Laravel, Vuejs, Inertia and Typescript.
+This project is setup with Laravel, Vuejs, Inertia, Typescript and Tailwindcss with purgecss.
 
 To start, run the following:
 - Go to the project root directory
