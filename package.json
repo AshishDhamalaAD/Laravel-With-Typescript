@@ -21,6 +21,9 @@
     },
     "dependencies": {
         "@inertiajs/inertia": "^0.1.9",
-        "@inertiajs/inertia-vue": "^0.1.4"
+        "@inertiajs/inertia-vue": "^0.1.4",
+        "@vue/composition-api": "^0.5.0",
+        "ts-loader": "^7.0.4",
+        "typescript": "^3.9.2"
     }
 }

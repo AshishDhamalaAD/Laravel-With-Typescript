@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import { InertiaApp } from '@inertiajs/inertia-vue'
+import VueCompositionApi from '@vue/composition-api'
 
 require('./bootstrap')
 
 Vue.use(InertiaApp)
+Vue.use(VueCompositionApi)
 Vue.prototype.$route = (...args) => {
     const [routeName, ...rest] = args
 

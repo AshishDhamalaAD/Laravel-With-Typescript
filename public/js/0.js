@@ -67,10 +67,18 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _layouts_default_DefaultLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../layouts/default/DefaultLayout */ "./resources/js/frontend/layouts/default/DefaultLayout.vue");
+/* harmony import */ var _services_counter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/counter */ "./resources/js/frontend/services/counter.ts");
+/* harmony import */ var _services_counter__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_services_counter__WEBPACK_IMPORTED_MODULE_1__);
 //
 //
 //
 //
+//
+//
+//
+//
+//
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Blogs",
@@ -78,13 +86,18 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     blogs: Array
   },
-  data: function data() {
-    return {};
-  },
-  computed: {},
-  methods: {},
-  watch: {},
-  mounted: function mounted() {}
+  setup: function setup(props) {
+    var _useCounter = _services_counter__WEBPACK_IMPORTED_MODULE_1___default()(),
+        count = _useCounter.count,
+        increaseCount = _useCounter.increaseCount,
+        decreaseCount = _useCounter.decreaseCount;
+
+    return {
+      count: count,
+      increaseCount: increaseCount,
+      decreaseCount: decreaseCount
+    };
+  }
 });
 
 /***/ }),
@@ -164,7 +177,15 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("Blogs")])
+  return _c("div", [
+    _c("div", [_vm._v("Blogs")]),
+    _vm._v(" "),
+    _c("div", [_vm._v(_vm._s(_vm.count))]),
+    _vm._v(" "),
+    _c("button", { on: { click: _vm.increaseCount } }, [_vm._v("Inc")]),
+    _vm._v(" "),
+    _c("button", { on: { click: _vm.decreaseCount } }, [_vm._v("Dec")])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -488,6 +509,36 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Blogs_vue_vue_type_template_id_f7388932___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
+
+
+/***/ }),
+
+/***/ "./resources/js/frontend/services/counter.ts":
+/*!***************************************************!*\
+  !*** ./resources/js/frontend/services/counter.ts ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var composition_api_1 = __webpack_require__(/*! @vue/composition-api */ "./node_modules/@vue/composition-api/dist/vue-composition-api.module.js");
+function default_1() {
+    var count = composition_api_1.ref(0);
+    function increaseCount() {
+        count.value++;
+    }
+    function decreaseCount() {
+        count.value--;
+    }
+    return {
+        count: count,
+        increaseCount: increaseCount,
+        decreaseCount: decreaseCount
+    };
+}
+exports.default = default_1;
 
 
 /***/ })
